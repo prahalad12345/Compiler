@@ -1,0 +1,9 @@
+check whether variable is declared (check ymbol table) . 
+check whether the operation is possible 
+i)(bool)<- int + int should not be allowed and so on
+(generate a warning for the above case)
+
+bison -d parser.y
+flex lexer.l
+gcc parser.tab.c lex.yy.c  -ll -ly
+./a.out < input

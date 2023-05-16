@@ -1,0 +1,13 @@
+gcc -E insert.c -I include -o  printpreproc.c
+gcc -E insert.c -I include -o  nodepreproc.c
+gcc -E insert.c -I include -o  insertpreproc.c
+
+gcc -S insert.c -I include
+gcc -S node.c -I include
+gcc -S print.c -I include
+
+gcc -c src/print.c -I include/
+gcc -c src/insert.c -I include/
+gcc -c src/node.c -I include/
+
+gcc  appl/bst.c insert.o node.o print.o -I include
